@@ -1,5 +1,12 @@
+<!--pages/search/search.wxml-->
 <view class='container'>
-  <scroll-view class='items' scroll-y='true'>
+ <view class='search'>
+  <input class='' placeholder='{{placeholder}}' placeholder-class='input' 
+  confirm-type='search' focus='false' bindblur='bindblur' bindconfirm='bindconfirm'/>
+  <button class='button'size ='mini' type='primary' bindtap='bindSearch'>搜索</button>
+ </view>
+ 
+ <scroll-view class='items' scroll-y='true'>
     <view class='item' wx:for='{{array}}' wx:key='id'>
       <view class='ss'>
         <label class='title'>{{item.title}}</label>
@@ -12,7 +19,4 @@
       </view>
     </view>
  </scroll-view>
- 
 </view>
-
-<view class='cc'><view class='tail'>本应用仅供个人学习交流使用，所有内容均来自互联网上的公开引用资源</view></view>

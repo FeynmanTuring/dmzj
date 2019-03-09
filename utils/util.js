@@ -21,12 +21,14 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+
+//热门漫画
 function getHotComics(handle){
   wx.request({
     url: hotURL,
 
     success(res){
-      if(handle.success){
+      if (handle.success){
         handle.success(res)
       }
 
@@ -35,7 +37,31 @@ function getHotComics(handle){
   })
 } 
 
+//搜索漫画
+//{keyword,success,fail}
+var searchComics= search =>{
+  if(!search.keyword) return
+
+  var parameter = {keyword: search.keyword}
+  wx.request({
+    url: searchURL,
+    data: parameter,
+    success(res){
+      if(search.success){
+        search.success(res)
+      }
+    },
+    fail(res){
+      if(search.fail){
+        search.fail(res)
+      }
+    }
+
+  })
+}
+
 module.exports = {
   formatTime: formatTime,
-  getHotComics: getHotComics
+  getHotComics: getHotComics,
+  searchComics: searchComics
 }

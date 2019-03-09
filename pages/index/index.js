@@ -5,12 +5,17 @@ const app = getApp()
 
 Page({
   data: {
-
+    array: []
   },
   onLoad: function (){
     util.getHotComics({
-      success(res){
-        console.log(res)
-      }})
+      success: res => {
+        this.setData({
+          array: res.data
+        })
+       // console.log(res)
+
+      }
+      })
   }
 })

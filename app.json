@@ -1,12 +1,29 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/search/search"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1d953f",
     "navigationBarTitleText": "动漫之家漫画搜索",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#77787b",
+    "selectedColor": "#1d953f",
+    "backgroundColor": "white",
+    "position": "top",
+    "list": [
+      {
+        "text": "热门",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "搜索",
+        "pagePath": "pages/search/search"
+      }
+    ]
   }
 }
